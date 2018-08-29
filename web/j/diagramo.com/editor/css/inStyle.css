@@ -1,0 +1,27 @@
+a{
+    text-decoration: none;
+    color: rgb(78, 75, 70);
+}
+a:hover{
+    text-decoration: none;
+    background-color: rgb(92, 67, 67);
+    padding: 10px;
+    color: #adb5bd;
+}
+li{
+    padding-right: 18px;
+}
+.form-group  label{
+    padding-right:25px;
+}
+.downClass li a{
+    color:blue;
+}
+.downClass li a:hover{
+   text-decoration: crimson;
+   color: blueviolet;
+   background-color: white;
+}
+.downClass li{
+    list-style: none;
+}

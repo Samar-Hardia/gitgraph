@@ -1,0 +1,109 @@
+--- importer.js
++++ importer.js
+@@ -258,18 +326,14 @@
+             for (var i = 0; i < jsonStack.containers.length; i++) {
+                 var currentContainer = jsonStack.containers[i];
+ 
+-                // old version  has Style::gradientBounds and Style::colorStops undefined
+-                currentContainer.style.gradientBounds = [];
+-                currentContainer.style.colorStops = [];
++                // add gradient properties to container's style
++                addFillGradientToStyle(currentContainer.style);
+ 
+                 // go through primitives of container
+                 var primitives = currentContainer.primitives;
+                 for (var j = 0; j < primitives.length; j++) {
+-                    var currentPrimitive = primitives[j];
+-
+-                    // old version has Style::gradientBounds and Style::colorStops undefined
+-                    currentPrimitive.style.gradientBounds = [];
+-                    currentPrimitive.style.colorStops = [];
++                    // add gradient properties to container's primitive
++                    addFillGradientToFigurePrimitive(primitives[j]);
+                 }
+             }
+ 
+@@ -277,42 +341,22 @@
+             for (var i = 0; i < jsonStack.figures.length; i++) {
+                 var currentFigure = jsonStack.figures[i];
+ 
+-                // old version has Style::gradientBounds and Style::colorStops undefined
+-                currentFigure.style.gradientBounds = [];
+-                currentFigure.style.colorStops = [];
++                // add gradient properties to figure's style
++                addFillGradientToStyle(currentFigure.style);
+ 
+                 // go through primitives of figure
+                 var primitives = currentFigure.primitives;
+                 for (var j = 0; j < primitives.length; j++) {
+-                    var currentPrimitive = primitives[j];
+-
+-                    // old version has Style::gradientBounds and Style::colorStops undefined
+-                    currentPrimitive.style.gradientBounds = [];
+-                    currentPrimitive.style.colorStops = [];
+-
+-                    // go through points of primitive if it's defined
+-                    var points = currentPrimitive.points /* for: Polyline, Polygon, etc*/
+-                            || currentPrimitive.vector /*for: ImageFrame, Text, etc*/;
+-                    if (points) {
+-                        for (var k = 0; k < points.length; k++) {
+-                            var currentPoint = points[k];
+-
+-                            // old version has Style::gradientBounds and Style::colorStops undefined
+-                            currentPoint.style.gradientBounds = [];
+-                            currentPoint.style.colorStops = [];
+-                        }
+-                    }
++                    // add gradient properties to container's primitive
++                    addFillGradientToFigurePrimitive(primitives[j]);
+                 }
+ 
+ 
+                 // go through rotation coordinates of figure
+                 var rotationCoords = currentFigure.rotationCoords /*for: Figure, Group, etc*/;
+                 for (var j = 0; j < rotationCoords.length; j++) {
+-                    var currentCoord = rotationCoords[j];
+-
+-                    // old version has Style::gradientBounds and Style::colorStops undefined
+-                    currentCoord.style.gradientBounds = [];
+-                    currentCoord.style.colorStops = [];
++                    // add gradient properties to figure's rotationCoord
++                    addFillGradientToStyle(rotationCoords[j].style);
+                 }
+             }
+         }
+@@ -324,28 +368,21 @@
+             for (var i = 0; i < jsonConnectorManager.connectors.length; i++) {
+                 var currentConnector = jsonConnectorManager.connectors[i];
+ 
+-                // old version has Style::gradientBounds and Style::colorStops undefined
+-                currentConnector.style.gradientBounds = [];
+-                currentConnector.style.colorStops = [];
++                // add gradient properties to connector's style
++                addFillGradientToStyle(currentConnector.style);
+ 
+                 // go through turning points of connector
+                 var turningPoints = currentConnector.turningPoints;
+                 for (var j = 0; j < turningPoints.length; j++) {
+-                    var currentTurningPoint = turningPoints[j];
+-
+-                    // old version has Style::gradientBounds and Style::colorStops undefined
+-                    currentTurningPoint.style.gradientBounds = [];
+-                    currentTurningPoint.style.colorStops = [];
++                    // add gradient properties to turningPoint's style
++                    addFillGradientToStyle(turningPoints[j].style);
+                 }
+             }
+ 
+             // go through connection points
+             for (var i = 0; i < jsonConnectorManager.connectionPoints.length; i++) {
+-                var currentCp = jsonConnectorManager.connectionPoints[i];
+-
+-                // old version has Style::gradientBounds and Style::colorStops undefined
+-                currentCp.point.style.gradientBounds = [];
+-                currentCp.point.style.colorStops = [];
++                // add gradient properties to connectionPoint's style
++                addFillGradientToStyle(jsonConnectorManager.connectionPoints[i].point.style);
+             }
+         }
+     }
