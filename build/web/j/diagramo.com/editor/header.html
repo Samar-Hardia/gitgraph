@@ -1,0 +1,72 @@
+<div id="header">    
+    <!--Logo menu-->
+    <div class="dropdown_menu">
+        <a style="padding: 0;" href="http://diagramo.com/" target="blank"><img src="assets/images/logo-36x36.png"/></a>
+    </div>
+    <!-- /File menu-->
+        
+    <div id="dropdown">
+        
+        <!--File menu-->
+        <div class="dropdown_menu"><a href="#" onmouseover="dropdownSpace.menuOpen('file')" onmouseout="dropdownSpace.menuCloseTime()">File</a>
+            <div class="dropdown_menu_panel" id="file" onmouseover="dropdownSpace.menuCancelCloseTime()" onmouseout="dropdownSpace.menuCloseTime()">
+                <a style="text-decoration: none;" href="editor.html?action=newDiagramExe" title="New diagram"><img style="vertical-align:middle; margin-right: 3px;" src="assets/images/icon_new.jpg" border="0" width="20" height="21"/><span class="menuText">New</span></a>
+                <a style="text-decoration: none; border-bottom: 1px solid #666;" href="editor.html" title="Open diagram"><img style="vertical-align:middle; margin-right: 3px;" src="assets/images/icon_open.jpg" border="0" width="20" height="21"/><span class="menuText">Open...</span></a>
+                                            </div>
+        </div>
+        <!-- /File menu-->
+
+        <!--Settings menu-->
+        <div class="dropdown_menu"><a href="#" onmouseover="dropdownSpace.menuOpen('settings')" onmouseout="dropdownSpace.menuCloseTime()">Settings</a>
+            <div class="dropdown_menu_panel"  id="settings" onmouseover="dropdownSpace.menuCancelCloseTime()" onmouseout="dropdownSpace.menuCloseTime()">
+                <a href="settings.html">My settings</a>
+            </div>
+        </div>
+        <!--Settings menu-->
+        
+        <!--Collaborators menu-->
+                <!--Collaborators menu-->
+        
+        <!--Help menu-->
+        <div class="dropdown_menu"><a href="#" onmouseover="dropdownSpace.menuOpen('help')" onmouseout="dropdownSpace.menuCloseTime()">Help</a>            
+            <div class="dropdown_menu_panel" id="help"    onmouseover="dropdownSpace.menuCancelCloseTime()" onmouseout="dropdownSpace.menuCloseTime()" >
+                <a href="https://bitbucket.org/scriptoid/diagramo/issues/new" target="new">Report bug</a>
+                <a href="javascript:void(0);" onclick="javascript:DIAGRAMO.switchDebug()"><img id="iconDebug"  src="assets/images/icon_debug_false.gif" style="vertical-align: middle;"/> Debug</a>
+                <!--<a href="./license.php">License</a>-->
+                <a href="javascript:void(0);" onclick="buildNo()">About</a>
+                <script type="text/javascript">
+                    var msg = "Build number: 2.4.0-3c215561787f-2014-07-01";
+                    function buildNo(){
+                        alert(msg);
+                    }
+                </script>                
+            </div>                        
+        </div>
+        <!--Help menu-->
+        
+        
+        <!--Direct link-->
+                <!-- //Direct link-->
+        
+        
+        
+        <!-- alfa
+            <td valign="middle">
+                <a style="text-decoration: none;" href="javascript:exportCanvas();"><img style="vertical-align:middle; margin-right: 3px;" src="../assets/images/icon_export.jpg" border="0" width="22" height="22"/><span class="menuText">Debug Export</span></a>
+            </td>
+            <td width="20" align="center">
+                <img style="vertical-align:middle;" src="../assets/images/upper_bar_separator.jpg" border="0" width="2" height="16"/>
+            </td>
+        -->    
+
+        <script type="text/javascript">
+            //check if browser is ready
+            if(!isBrowserReady()){                
+                document.write('<span style="background-color: red;" >');
+                document.write("No support for HTML5. More <a href=\"http://webaddress/htm5-support.php\">here</a></a>");
+                document.write("</span>");                
+            }
+        </script>   
+        
+    </div>
+</div>

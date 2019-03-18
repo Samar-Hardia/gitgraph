@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+        "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+             width="200" height="40"
+    > <rect x="0" y="0" height="40" width="200"
+        style="stroke: none; fill: none;" >
+        </rect> <text x="25" y="26" font-size="21" transform="translate(25, 26) rotate(-18) translate(-25, -26)">0</text>
+<text x="5" y="29" font-size="23" transform="translate(5, 29) rotate(-6) translate(-5, -29)">p</text>
+<text x="45" y="30" font-size="22" transform="translate(45, 30) rotate(6) translate(-45, -30)">p</text>
+<text x="105" y="31" font-size="25" transform="translate(105, 31) rotate(17) translate(-105, -31)">s</text>
+<text x="65" y="34" font-size="25" transform="translate(65, 34) rotate(0) translate(-65, -34)">u</text>
+<text x="85" y="25" font-size="20" transform="translate(85, 25) rotate(1) translate(-85, -25)">e</text>
+</svg>
